@@ -1,0 +1,13 @@
+{
+  "name": "MathSénégal AI",
+  "description": "Plateforme intelligente de mathématiques alignée sur le programme scolaire sénégalais (6ème à Terminale). Résolution, explications pédagogiques et suivi scolaire.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "AI-powered math solving",
+    "Senegalese curriculum alignment",
+    "Handwriting OCR",
+    "Pedagogical explanations"
+  ]
+}

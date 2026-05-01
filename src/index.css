@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --senegal-green: #059669; /* Emerald 600 */
+  --senegal-yellow: #f59e0b; /* Amber 500 */
+  --senegal-red: #e11d48; /* Rose 600 */
+  --primary: #059669;
+  --secondary: #fbbf24;
+  --surface: #ffffff;
+  --bg: #f8fafc; /* Slate 50 */
+}
+
+body {
+  background-color: var(--bg);
+  color: #0f172a; /* Slate 900 */
+  overflow-x: hidden;
+}
+
+.math-gradient {
+  background: linear-gradient(135deg, #059669 0%, #064e3b 100%);
+}
+
+.card-math {
+  @apply bg-white rounded-2xl shadow-sm border border-slate-200 hover:border-emerald-500 transition-all duration-300;
+}
+
+.btn-primary {
+  @apply bg-emerald-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-900/10 flex items-center justify-center gap-2 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-slate-100 text-slate-700 px-6 py-3 rounded-xl font-bold hover:bg-slate-200 transition-all flex items-center justify-center gap-2 active:scale-95;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-200 rounded-full hover:bg-slate-300;
+}

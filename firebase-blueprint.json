@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Represents a student or teacher in the system",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "role": { "type": "string", "enum": ["student", "teacher"] },
+        "level": { "type": "string", "description": "e.g., 6e, 3e, Terminale S" },
+        "points": { "type": "integer" },
+        "badges": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "ExerciseSession": {
+      "title": "Exercise Session",
+      "description": "A math exercise solved by a user",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "imageUrl": { "type": "string", "description": "Original scan if applicable" },
+        "problem": { "type": "string" },
+        "solution": { "type": "string" },
+        "explanation": { "type": "string", "description": "Pedagogical explanation" },
+        "level": { "type": "string" },
+        "chapter": { "type": "string" },
+        "status": { "type": "string", "enum": ["completed", "in_progress"] },
+        "timestamp": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Class": {
+      "title": "Class",
+      "description": "A group of students managed by a teacher",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "teacherId": { "type": "string" },
+        "studentEmails": { "type": "array", "items": { "type": "string" } },
+        "level": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles and progression"
+    },
+    "/sessions/{sessionId}": {
+      "schema": "ExerciseSession",
+      "description": "History of solved exercises"
+    },
+    "/classes/{classId}": {
+      "schema": "Class",
+      "description": "Teacher classes"
+    }
+  }
+}
